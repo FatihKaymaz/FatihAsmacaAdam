@@ -1,0 +1,49 @@
+<!-- Sayfanın HTML sayfası olduğunun belirtir -->
+<!DOCTYPE html>
+<!-- Sayfanın dili -->
+<html lang="tr">
+
+<!-- head etiketi, sayfanın arka planında dönen işlemleri içerir -->
+<head>
+  <!-- Sayfayı UTF-8 ile kodlar. (Özetle tüm dillerdeki karakterleri destekler)-->
+  <meta charset="UTF-8">
+  <!-- Telefonlar için ölçekleme düzeltme -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HANG MAN</title>
+  <!-- style.css dosyasının bağlantısı -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase JS SDK (Yazılım gelişştirme kiti) -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+</head>
+
+<!-- body etiketi sayfada kullanıcıya yansıyan kodları içerir -->
+<!-- Body etiketine "body" id'sini verdik ve ana sayfada ortalanabilmesi için javascript tarafında yazmış olduğumuz "ekranGenisligiAyarlamasi()" fonksiyonu ile ortaladık. -->
+<body id="body" onresize="ekranGenisligiAyarlamasi()">
+  <div id="geneldiv">
+    <h2 class="baslik">Adam Asmaca</h2>
+    <a href="#">
+      <!-- Bu div ve içindekiler google ile oturum açma butonu. -->
+      <div class="g-sign-in-button" onclick="GoogleSignIn()">
+        <div class="content-wrapper">
+          <div class="logo-wrapper">
+            <img src="https://developers.google.com/identity/images/g-logo.png">
+          </div>
+          <span class="text-container">
+            <span>Google İle Giriş Yap</span>
+          </span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Script'i bağladık: -->
+  <script src="script.js"></script>
+  <!-- Oturum durum kontrolu için oluşturmuş olduğumuz js: -->
+  <script src="oturumDurumu.js"></script>
+</body>
+
+</html>

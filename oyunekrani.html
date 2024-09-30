@@ -1,0 +1,64 @@
+<!-- Sayfanın HTML sayfası olduğunun belirtir -->
+<!DOCTYPE html>
+<!-- Sayfanın dili -->
+<html lang="tr">
+<!-- head etiketi, sayfanın arka planında dönen işlemleri içerir -->
+<head>
+    <!-- Sayfayı UTF-8 ile kodlar. (Özetle tüm dillerdeki karakterleri destekler)-->
+    <meta charset="UTF-8">
+    <!-- Telefonlar için ölçekleme düzeltme -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Sayfa</title>
+    <!-- bootstrap linkini sayfamıza bağladık. -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <!-- style.css dosyasının bağlantısı -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase JS SDK (Yazılım gelişştirme kiti) -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+</head>
+
+<!-- body etiketi sayfada kullanıcıya yansıyan kodları içerir -->
+<body id="body">
+
+    <!-- Veri tababnından rastgele olarak çektiğimiz, kullanıcının karşılığını bilmeini istediğimiz kelimeyi yazdırdığımız div. -->
+    <h4><center><div id="kelime">Kelime Bekleniyor...</div></center></h4>
+
+    <!-- Veritabanından çekmiş olduğumuz 4 tane rastgele kelimeyi ve doğru cevabı da rastgele bir sıralamada olacak şekilde yazdırdığımız 5 adet şık divleri. Ve gene bootstrap kütüphanesinin mavi butonlarından kullandık. -->
+    <center>
+        <input id="A" type="button" value="Kelime Bekleniyor..." class="btn btn-info geneltus">
+        <input id="B" type="button" value="Kelime Bekleniyor..." class="btn btn-info geneltus">
+        <input id="C" type="button" value="Kelime Bekleniyor..." class="btn btn-info geneltus">
+        <input id="D" type="button" value="Kelime Bekleniyor..." class="btn btn-info geneltus">
+        <input id="E" type="button" value="Kelime Bekleniyor..." class="btn btn-info geneltus">
+    </center> <br> <br> <br> <br> <br> <br>
+
+    <!-- Bu alanda alet edevat klasöründe bulunan 7 tane sıralamalı adam asmaca fotoğraflarını her bir yanlış cevap verildiğinde kullanıcıya adamın son durumunu gösterdiğimiz fotoğraf kısmı (img). -->
+    <div id="geneldiv"><center><img src="alet edevat/Ani1.png" id="hata"></center></div>
+    <!-- Oyun esnasında her bir soru doğru bilindiğinde sor başına 10 puan kazanıyoruz. Her bir soru bilindiğinde kazanılan puanlarının toplamını yazdırdığımız div. -->
+    <div id="score">Skor:</div>
+    <!-- Oyunda iken oyun bitmeden oyundan çıkmak istersek diye oyundan çıkma butonu. -->
+    <input type="button" class="btn btn-outline-danger geneltus" id="cikistus" value="Oyundan Çık" onclick="window.location.href='girissayfasi.html'">
+
+    <!-- Bütün haklar yandığında oyun biter. Oyun bittiğinde kullanıcın karşısına çıkan oyun bitti kutusu. -->
+    <div id="bitis">
+        <h4 class="text-center">OYUN BİTTİ</h4>
+        <!-- Oyun boyu elde edilen skor verisinin yazıldığı alan. -->
+        <center><h5>Skor: <p id="skorP"></p></h5></center>
+        <!-- Tekrar oyna butonu. -->
+        <center><button type="button" class="btn btn-success bitisekranbuton" onclick="window.location.href= 'oyunekrani.html' ">Tekrar Oyna</button></center> 
+        <!-- Ana sayfaya dön butonu -->
+        <center><button type="button" class="btn btn-danger bitisekranbuton" onclick="window.location.href= 'girissayfasi.html' ">Çıkış Yap</button></center> <br>
+        
+    </div>
+    
+
+    <!-- JavaScript dosya bağlantıları. -->
+    <script src="script.js"></script>
+    <script src="oyun.js"></script>
+</body>
+
+</html>

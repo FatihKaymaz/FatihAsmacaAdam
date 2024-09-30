@@ -1,0 +1,242 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(to right, #76b852, #9ac582);
+  height: 100vh;
+}
+
+.baslik {
+  text-align: center;
+  font-style: italic;
+}
+
+.g-sign-in-button {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 10px;
+  display: inline-block;
+  width: 240px;
+  height: 50px;
+  background-color: #4285f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .25);
+  transition: background-color .218s, border-color .218s, box-shadow .218s;
+}
+
+.g-sign-in-button:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 3px 3px rgba(66, 133, 244, .3);
+  box-shadow: 0 0 3px 3px rgba(66, 133, 244, .3);
+}
+
+.g-sign-in-button:active {
+  background-color: #3367D6;
+  transition: background-color .2s;
+}
+
+.g-sign-in-button .content-wrapper {
+  height: 100%;
+  width: 100%;
+  border: 1px solid transparent;
+}
+
+.g-sign-in-button img {
+  width: 18px;
+  height: 18px;
+}
+
+.g-sign-in-button .logo-wrapper {
+  padding: 15px;
+  background: #fff;
+  width: 48px;
+  height: 100%;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.g-sign-in-button .text-container {
+  font-family: "Roboto", arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: .21px;
+  font-size: 16px;
+  line-height: 48px;
+  vertical-align: top;
+  border: none;
+  display: inline-block;
+  text-align: center;
+  width: 180px;
+}
+
+#body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background: url("alet\ edevat/peakpx.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: top;
+  margin-top: 10px;
+  background-position-y: center;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#geneldiv {
+  background-color: rgba(102, 139, 173, 0.5);
+  border-color: rgba(61, 61, 185, 0.363);
+  position: absolute;
+  top: 50%;
+  border-style: groove;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 30px rgb(51, 134, 211);
+  overflow: auto;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+}
+
+.geneltus {
+  width: 150px;
+
+}
+
+/* Kelimenin Yazılacağı div */
+#kelime {
+  font-style: italic;
+  font-weight: bold;
+  background-color: #0b3c4a7a;
+  color: #fdfdf5;
+  padding: 10px 10px;
+
+}
+
+#cikistus {
+  bottom: 0;
+  position: absolute;
+  margin-top: auto;
+  margin-bottom: 20px;
+  align-self: center;
+}
+
+#hata {
+  width: 300px;
+
+}
+
+#score {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 5px;
+  padding: 5px;
+
+  background-color: #64eb16;
+  border-radius: 25px;
+  font-style: italic;
+
+  min-width: 140px;
+  min-height: 50px;
+  font-size: 30px;
+}
+
+#bitis
+{
+  width: 300px;
+  min-height: 200px;
+  background-color: rgba(97,156,172,255);
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px; /* Yüksekliğin yarısı */
+  margin-left: -150px; /* Genişliğin yarısı */
+  border-radius: 30px;
+  opacity: 0.9;
+  display: none; 
+}
+
+.bitisekranbuton
+{
+  margin-top: 35px;
+  margin-bottom: 0px;
+  width: 150px;
+  
+}
+#siralama
+{
+  /* background-color: pink; */
+  min-width: 400px;
+  min-height: 400px;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  
+}
+#puankutusu1, #puankutusu2, #puankutusu3, #puankutusu4,#puankutusu5
+{
+  width: 400px;
+  height: 85px;
+  margin: 5px;
+  background-color: rgba(102, 139, 173, 0.5);
+  border-color: rgba(61, 61, 185, 0.363);
+  border-style: groove;
+  box-shadow: 0px 0px 30px rgb(51, 134, 211);
+  
+}
+
+#puankutusu1-isim, #puankutusu2-isim, #puankutusu3-isim, #puankutusu4-isim, #puankutusu5-isim
+{
+  float: left; 
+  display: block;
+  margin-top: 25px;
+  font-style: italic;
+  color: rgba(200,234,244,255);
+  text-shadow: 0px 0px 10px black;
+}
+
+#puankutusu1-skor, #puankutusu2-skor, #puankutusu3-skor, #puankutusu4-skor, #puankutusu5-skor
+{
+  float: left;
+  display: block;
+  margin-top: 25px;
+  margin-left: 20px;
+  font-style: italic;
+  color: rgba(200,234,244,255);
+  text-shadow: 0px 0px 10px black;
+  
+}
+
+#puankutusu1-resim, #puankutusu2-resim, #puankutusu3-resim, #puankutusu4-resim, #puankutusu5-resim
+{
+  float: right;
+  display: block;
+  width: 80px;
+  
+}
+
+#oyunModlarıDiv{
+  min-width: 300px;
+  min-height: 300px;
+  background-color: rgba(102, 139, 173, 0.911);
+  border-color: rgba(61, 61, 185, 0.363);
+  position: absolute;
+  border-style: groove;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px; /* Yüksekliğin yarısı */
+  margin-left: -150px; /* Genişliğin yarısı */
+  border-radius: 30px;
+  display: none;
+}

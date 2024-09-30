@@ -1,0 +1,88 @@
+<!-- Sayfanın html sayfası olduğunu belirtir -->
+<!DOCTYPE html>
+<!-- Sayfanın türkçe dilinde olduğunu belirtir -->
+<html lang="tr">
+
+<!-- head etiketi, sayfanın arka planında dönen işlemleri içerir -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oyuna Giriş Sayfası</title>
+    <!-- bootstrap linkini sayfamıza bağladık. -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <!-- style.css dosyasının bağlantısı -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Firebase JS SDK (Yazılım gelişştirme kiti) -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+</head>
+
+<!-- body etiketi sayfada kullanıcıya yansıyan kodları içerir -->
+<!-- Body etiketine "body" id'sini verdik ve ana sayfada ortalanabilmesi için javascript tarafında yazmış olduğumuz "ekranGenisligiAyarlamasi()" fonksiyonu ile ortaladık. -->
+<body id="body" onresize="ekranGenisligiAyarlamasi()">
+
+    <!-- "siralama" ismindeki div'in görevi, sitede oynanan oyunlarda kasılan skor verisi bu alana yazılır. Bu alanda gene javascript ile en çok skor elde eden ilk 5 kişiyi belirleyip bu alandaki sıralı olan divlere yazdırdık. -->
+    <div id="siralama">
+        <div id="puankutusu1">
+            <div id="puankutusu1-isim"></div>
+            <div id="puankutusu1-skor"></div>
+            <img id="puankutusu1-resim" src="">
+        </div>
+        <div id="puankutusu2">
+            <div id="puankutusu2-isim"></div>
+            <div id="puankutusu2-skor"></div>
+            <img id="puankutusu2-resim" src="">
+        </div>
+        <div id="puankutusu3">
+            <div id="puankutusu3-isim"></div>
+            <div id="puankutusu3-skor"></div>
+            <img id="puankutusu3-resim" src="">
+        </div>
+        <div id="puankutusu4">
+            <div id="puankutusu4-isim"></div>
+            <div id="puankutusu4-skor"></div>
+            <img id="puankutusu4-resim" src="">
+        </div>
+        <div id="puankutusu5">
+            <div id="puankutusu5-isim"></div>
+            <div id="puankutusu5-skor"></div>
+            <img id="puankutusu5-resim" src="">
+        </div>
+    </div>
+    
+    <!-- Bu alan elde ettiğiniz skor verisinin, oyna butonunun ve oturumu kapatma butonunun olduğu divdir. -->
+    <div id="geneldiv">
+        <h2 class="baslik">Adam Asmaca</h2>
+        <!-- Bu alana javascript ile sadece sizin elde ettiğiniz skor verisi yazıldı. -->
+        <center><h2 id="girissayfasiID">Skor bekleniyor...</h2></center>
+        
+        <!-- Oyna butonuna basıldığında "oyunekrani.html"e yönlendirdik. Butonun görünümü de bootstrap ile yeşil görünüm verdik. -->
+        <center><button class="btn btn-outline-success geneltus" onclick="document.getElementById('oyunModlarıDiv').style.display='block'">OYNA</button></center> <br>
+        <!-- Çıkış yap butonu. Basıldığında "SignOut()" fonksiyonuna yönlendirip çıkış yapma işlemini yapıyoruz. -->
+        <center><button class="btn btn-outline-danger geneltus" onclick="SignOut()">ÇIKIŞ YAP</button></center> <br>
+        
+    </div>
+
+    <div id="oyunModlarıDiv">
+        <center><h2>Oyun Modu Seçimi</h2></center>
+        <br>
+        <center><button class="btn btn-success" onclick="window.location.href='oyunekrani.html?secenek=1'">Türkçe<span style="color: red;">⇨</span> İngilizce</button></center>
+        <br>
+        <center><button class="btn btn-success" onclick="window.location.href='oyunekrani.html?secenek=2'">İngilizce <span style="color: red;">⇨</span> Türkçe</button></center>
+        <br>
+        <center><button class="btn btn-success" onclick="window.location.href='oyunekrani.html?secenek=3'">Karışık</button></center>
+        <br>
+        <center><button class="btn btn-outline-danger" onclick="document.getElementById('oyunModlarıDiv').style.display='none'">Ana Menü</button></center>
+        <br>
+    </div>
+
+    
+    <!-- Bağladığımız javascript dosyaları -->
+    <script src="script.js"></script>
+    <script src="kisikayit.js"></script>
+    <script src="skortablosu.js"></script>
+</body>
+
+</html>
